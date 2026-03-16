@@ -36,8 +36,8 @@
 
       --white:       #ffffff;
       --text-main:   #e8e0d0;   /* 本文テキスト */
-      --text-sub:    #a09880;   /* サブテキスト */
-      --text-muted:  #5a5248;   /* ミュートテキスト */
+      --text-sub:    #d4cfc0;   /* サブテキスト ≈ rgba(232,224,208,0.85) */
+      --text-muted:  #a89f90;   /* ミュートテキスト（年配者向け高コントラスト） */
 
       /* ── Typography ── */
       --font-serif:  'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
@@ -87,7 +87,7 @@
     }
 
     html {
-      font-size: 16px;
+      font-size: 18px;
       scroll-behavior: smooth;
       -webkit-text-size-adjust: 100%;
     }
@@ -162,9 +162,9 @@
       color: var(--gold);
     }
     .body-text {
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-size: clamp(1.0rem, 1.6vw, 1.2rem);
       font-weight: 300;
-      line-height: 1.85;
+      line-height: 1.9;
       color: var(--text-sub);
     }
 
@@ -449,8 +449,8 @@
       gap: 0.25rem;
     }
     .nav__link {
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
+      font-size: 0.81rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-sub);
       padding: 0.5rem 0.9rem;
@@ -653,7 +653,7 @@
         rgba(180,155,100,0.035) 80px
       );
     }
-    /* 花びら */
+    /* 桜の花びら */
     .hero__petals {
       position: absolute;
       inset: 0;
@@ -663,18 +663,23 @@
     }
     .petal {
       position: absolute;
-      width: 7px;
-      height: 7px;
-      background: rgba(220,175,160,0.38);
-      border-radius: 50% 10% 50% 10%;
+      pointer-events: none;
       animation: petalFall linear infinite;
     }
+    .petal svg { display: block; }
     @keyframes petalFall {
-      0%   { transform: translateY(-30px) rotate(0deg)   translateX(0);   opacity: 0;   }
-      8%   { opacity: 0.9; }
-      50%  { transform: translateY(50vh)  rotate(360deg) translateX(30px);              }
-      92%  { opacity: 0.25; }
-      100% { transform: translateY(110vh) rotate(720deg) translateX(-20px); opacity: 0; }
+      0%   { transform: translateY(-40px) rotate(0deg)   translateX(0)    rotateX(0deg);   opacity: 0;    }
+      6%   { opacity: 1; }
+      30%  { transform: translateY(28vh)  rotate(120deg) translateX(18px)  rotateX(40deg);               }
+      55%  { transform: translateY(55vh)  rotate(260deg) translateX(-22px) rotateX(80deg);               }
+      80%  { transform: translateY(82vh)  rotate(420deg) translateX(14px)  rotateX(120deg);              }
+      94%  { opacity: 0.6; }
+      100% { transform: translateY(115vh) rotate(600deg) translateX(-10px) rotateX(180deg); opacity: 0;  }
+    }
+    @keyframes petalSway {
+      0%,100% { margin-left: 0; }
+      25%      { margin-left: 24px; }
+      75%      { margin-left: -18px; }
     }
     /* コンテンツ */
     .hero__content {
@@ -761,7 +766,7 @@
       gap: 0.5rem;
       font-size: 0.68rem;
       letter-spacing: 0.18em;
-      color: var(--text-muted);
+      color: rgba(180,155,100,0.8);
       text-transform: uppercase;
     }
     .hero__no-form-dot {
@@ -787,7 +792,7 @@
       font-size: 0.56rem;
       letter-spacing: 0.45em;
       text-transform: uppercase;
-      color: var(--gold-dim);
+      color: rgba(180,155,100,0.8);
     }
     .hero__scroll-line {
       width: 1px; height: 44px;
@@ -964,7 +969,7 @@
       align-items: flex-start;
       gap: 0.7rem;
       font-size: 0.83rem;
-      color: var(--text-sub);
+      color: rgba(232,224,208,0.85);
       padding: 0.42rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
@@ -1194,10 +1199,10 @@
     .sim-step.active   .sim-step-num { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
     .sim-step.completed .sim-step-num { background: rgba(180,155,100,0.2); color: var(--gold); }
     .sim-step-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text-sub);
     }
     .sim-step.active    .sim-step-title { color: var(--gold); }
 
@@ -1208,8 +1213,8 @@
       gap: 0.6rem;
     }
     .sim-option {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(180,155,100,0.18);
       border-radius: 10px;
       padding: 0.9rem 0.7rem;
       cursor: pointer;
@@ -1239,9 +1244,23 @@
     }
     .sim-option.selected::before { opacity: 1; }
     .sim-option-icon {
-      font-size: 1.4rem;
-      margin-bottom: 0.35rem;
+      font-size: 1.55rem;
+      margin-bottom: 0.5rem;
       display: block;
+      width: 2.6rem;
+      height: 2.6rem;
+      line-height: 2.6rem;
+      border-radius: 50%;
+      background: rgba(180,155,100,0.14);
+      border: 1px solid rgba(180,155,100,0.28);
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+    }
+    .sim-option:hover .sim-option-icon,
+    .sim-option.selected .sim-option-icon {
+      background: rgba(180,155,100,0.28);
+      border-color: rgba(180,155,100,0.55);
     }
     .sim-option-label {
       font-size: 0.78rem;
@@ -1253,9 +1272,9 @@
     }
     .sim-option.selected .sim-option-label { color: var(--gold-bright); }
     .sim-option-sub {
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: rgba(180,155,100,0.9);
       display: block;
     }
 
@@ -1828,24 +1847,27 @@
     .trust-flow { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-bottom:4rem; position:relative; }
     .trust-flow::before { content:''; position:absolute; top:36px; left:12.5%; right:12.5%; height:1px; background:linear-gradient(90deg,transparent,var(--gold),var(--gold),transparent); opacity:.2; }
     .trust-flow-step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 0.8rem; }
-    .trust-flow-icon { width:72px; height:72px; border-radius:50%; background:var(--navy-mid); border:1px solid rgba(180,155,100,.28); display:flex; align-items:center; justify-content:center; font-size:1.55rem; margin-bottom:1rem; position:relative; z-index:1; transition:all .3s var(--ease-out); }
-    .trust-flow-step:hover .trust-flow-icon { border-color:var(--gold); box-shadow:0 0 24px rgba(180,155,100,.2); transform:translateY(-3px); }
-    .trust-flow-name { font-size:.8rem; font-weight:400; color:var(--text-main); margin-bottom:.3rem; letter-spacing:.04em; }
-    .trust-flow-desc { font-size:.68rem; color:var(--text-muted); line-height:1.55; }
-    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-bottom:3.5rem; }
-    .team-card { background:rgba(10,22,40,.7); border:1px solid rgba(180,155,100,.12); border-radius:14px; padding:1.8rem 1.5rem; transition:all .35s var(--ease-out); position:relative; overflow:hidden; }
-    .team-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(180,155,100,.05) 0%,transparent 60%); pointer-events:none; }
-    .team-card:hover { border-color:rgba(180,155,100,.32); transform:translateY(-4px); box-shadow:var(--shadow-card); }
-    .team-card--future { border-style:dashed; opacity:.7; }
-    .team-avatar { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--navy-light),var(--navy-pale)); border:1px solid rgba(180,155,100,.3); display:flex; align-items:center; justify-content:center; font-size:1.25rem; margin-bottom:1rem; font-family:var(--font-jp); color:var(--gold); font-weight:600; }
-    .team-name-jp { font-family:var(--font-jp); font-size:.72rem; letter-spacing:.1em; color:var(--gold-dim); margin-bottom:.12rem; }
-    .team-name-en { font-size:1rem; font-weight:300; letter-spacing:.05em; color:var(--text-main); margin-bottom:.3rem; }
-    .team-role    { font-size:.63rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.65rem; }
-    .team-bio     { font-size:.77rem; color:var(--text-muted); line-height:1.7; }
-    .team-langs   { display:flex; gap:.3rem; margin-top:.65rem; flex-wrap:wrap; }
-    .team-lang    { font-size:.57rem; letter-spacing:.1em; padding:.18rem .5rem; border-radius:var(--radius-pill); background:rgba(180,155,100,.08); border:1px solid rgba(180,155,100,.2); color:var(--gold-dim); }
-    .team-badge   { position:absolute; top:1rem; right:1rem; font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; padding:.2rem .6rem; border-radius:var(--radius-pill); background:rgba(80,160,120,.15); border:1px solid rgba(80,160,120,.3); color:#80d4b0; }
-    .team-badge--soon { background:rgba(180,155,100,.1); border-color:rgba(180,155,100,.2); color:var(--gold-dim); }
+    .trust-flow-icon { width:72px; height:72px; border-radius:50%; background:rgba(180,155,100,0.16); border:1px solid rgba(180,155,100,.45); display:flex; align-items:center; justify-content:center; font-size:1.55rem; margin-bottom:1rem; position:relative; z-index:1; transition:all .3s var(--ease-out); box-shadow:0 0 18px rgba(180,155,100,.1); }
+    .trust-flow-step:hover .trust-flow-icon { border-color:var(--gold); background:rgba(180,155,100,0.26); box-shadow:0 0 28px rgba(180,155,100,.3); transform:translateY(-3px); }
+    .trust-flow-name { font-size:.82rem; font-weight:400; color:var(--text-main); margin-bottom:.3rem; letter-spacing:.04em; }
+    .trust-flow-desc { font-size:0.72rem; color:var(--text-sub); line-height:1.6; }
+    /* Team — compact minimal list */
+    .team-grid { display:flex; flex-direction:column; gap:0; margin-bottom:3rem; border:1px solid rgba(180,155,100,.14); border-radius:14px; overflow:hidden; }
+    .team-card { background:rgba(10,22,40,.5); border:none; border-bottom:1px solid rgba(180,155,100,.1); padding:1.1rem 1.6rem; transition:background .25s var(--ease-out); position:relative; display:flex; align-items:center; gap:1.2rem; }
+    .team-card:last-child { border-bottom:none; }
+    .team-card::before { display:none; }
+    .team-card:hover { background:rgba(180,155,100,.06); }
+    .team-card--future { opacity:.65; }
+    .team-avatar { width:40px; height:40px; border-radius:50%; background:var(--navy-mid); border:1px solid rgba(180,155,100,.25); display:flex; align-items:center; justify-content:center; font-size:1.05rem; flex-shrink:0; font-family:var(--font-jp); color:var(--gold); font-weight:600; }
+    .team-card__info { flex:1; min-width:0; }
+    .team-name-jp { font-family:var(--font-jp); font-size:.68rem; letter-spacing:.1em; color:var(--gold-dim); margin-bottom:.05rem; display:inline; }
+    .team-name-en { font-size:.88rem; font-weight:400; letter-spacing:.04em; color:var(--text-main); display:inline; margin-left:.5rem; }
+    .team-role    { font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin:.18rem 0 .28rem; }
+    .team-bio     { font-size:.72rem; color:var(--text-muted); line-height:1.6; }
+    .team-langs   { display:flex; gap:.25rem; margin-top:.4rem; flex-wrap:wrap; }
+    .team-lang    { font-size:.54rem; letter-spacing:.08em; padding:.12rem .42rem; border-radius:var(--radius-pill); background:rgba(180,155,100,.07); border:1px solid rgba(180,155,100,.18); color:var(--gold-dim); }
+    .team-badge   { font-size:.52rem; letter-spacing:.12em; text-transform:uppercase; padding:.15rem .5rem; border-radius:var(--radius-pill); background:rgba(80,160,120,.12); border:1px solid rgba(80,160,120,.28); color:#80d4b0; white-space:nowrap; flex-shrink:0; }
+    .team-badge--soon { background:rgba(180,155,100,.08); border-color:rgba(180,155,100,.2); color:var(--gold-dim); }
     .pilot-card { background:linear-gradient(135deg,rgba(15,32,68,.95) 0%,rgba(26,48,96,.6) 100%); border:1px solid rgba(180,155,100,.3); border-radius:18px; padding:3rem; position:relative; overflow:hidden; }
     .pilot-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--gold-bright),var(--gold),transparent); }
     .pilot-quote-mark { font-family:Georgia,serif; font-size:8rem; color:var(--gold); opacity:.08; line-height:.7; position:absolute; top:1.5rem; left:2rem; pointer-events:none; }
@@ -1864,24 +1886,24 @@
     @media(max-width:580px){ .team-grid{grid-template-columns:1fr;} .pilot-card{padding:1.8rem 1.2rem;} }
 
     /* ── §5 LIVE ── */
-    #live { background:var(--cream); color:var(--navy-deep); }
+    #live { background:var(--navy-deep); color:var(--text-main); }
     #live .section-label__num,#live .section-label__name { color:var(--gold-dim); }
     #live .section-label__line { background:var(--gold-dim); }
     .live-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:4rem; align-items:start; }
-    .live-info-title { font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:300; letter-spacing:.03em; color:var(--navy-deep); line-height:1.2; margin-bottom:1rem; }
+    .live-info-title { font-size:clamp(2rem,3.8vw,3rem); font-weight:300; letter-spacing:.03em; color:var(--text-main); line-height:1.2; margin-bottom:1rem; }
     .live-info-title em { font-style:italic; color:var(--gold); }
-    .live-info-sub { font-size:.9rem; color:#4a5568; line-height:1.85; margin-bottom:2rem; }
+    .live-info-sub { font-size:1rem; color:var(--text-sub); line-height:1.9; margin-bottom:2rem; }
     .live-features { display:flex; flex-direction:column; gap:.9rem; margin-bottom:2.2rem; }
     .live-feature { display:flex; align-items:flex-start; gap:.8rem; }
-    .live-feature-dot { width:28px; height:28px; border-radius:50%; background:rgba(180,155,100,.12); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:.8rem; flex-shrink:0; margin-top:.1rem; }
-    .live-feature-text { font-size:.84rem; color:#4a5568; line-height:1.65; }
-    .live-feature-text strong { color:var(--navy-deep); }
+    .live-feature-dot { width:30px; height:30px; border-radius:50%; background:rgba(180,155,100,.18); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0; margin-top:.1rem; }
+    .live-feature-text { font-size:.92rem; color:var(--text-sub); line-height:1.7; }
+    .live-feature-text strong { color:var(--text-main); }
     .live-form-card { background:var(--navy-deep); border-radius:18px; padding:2.5rem; border:1px solid rgba(180,155,100,.2); box-shadow:0 8px 48px rgba(0,0,0,.15); }
     .live-form-title { font-size:.63rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1.8rem; }
     .live-step-group { margin-bottom:1.6rem; }
-    .live-step-label { font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--text-sub); margin-bottom:.65rem; }
+    .live-step-label { font-size:0.68rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(180,155,100,0.8); margin-bottom:.65rem; }
     .live-choices { display:flex; gap:.45rem; flex-wrap:wrap; }
-    .live-choice { font-family:var(--font-serif); font-size:.77rem; letter-spacing:.06em; color:var(--text-sub); background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:.58rem .95rem; cursor:pointer; transition:all .25s var(--ease-out); -webkit-tap-highlight-color:transparent; }
+    .live-choice { font-family:var(--font-serif); font-size:.85rem; letter-spacing:.05em; color:var(--text-sub); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:8px; padding:.62rem 1rem; cursor:pointer; transition:all .25s var(--ease-out); -webkit-tap-highlight-color:transparent; }
     .live-choice:hover { border-color:rgba(180,155,100,.3); color:var(--text-main); }
     .live-choice.sel { background:rgba(180,155,100,.12); border-color:var(--gold); color:var(--gold); }
     .live-divider { height:1px; background:rgba(255,255,255,.06); margin-bottom:1.6rem; }
@@ -1893,7 +1915,7 @@
     .live-cta--wa:hover  { background:#20bd5a; transform:translateY(-2px); }
     .live-cta--line{ background:#06C755; color:#fff; }
     .live-cta--line:hover{ background:#05b34c; transform:translateY(-2px); }
-    .live-note { font-size:.63rem; letter-spacing:.1em; color:var(--text-muted); text-align:center; margin-top:.5rem; }
+    .live-note { font-size:.7rem; letter-spacing:.1em; color:var(--text-sub); text-align:center; margin-top:.5rem; }
     @media(max-width:860px){ .live-grid{grid-template-columns:1fr;gap:2.5rem;} }
 
     /* ── §6 DATA ── */
@@ -1928,7 +1950,7 @@
     .countdown-key { font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-top:.15rem; display:block; }
     .countdown-date { font-size:.72rem; letter-spacing:.15em; color:rgba(255,255,255,.45); margin-bottom:1.5rem; }
     .why-now-bullets { display:flex; flex-direction:column; gap:.6rem; margin-top:1.5rem; }
-    .why-now-bullet { display:flex; align-items:flex-start; gap:.65rem; font-size:.82rem; color:var(--text-sub); }
+    .why-now-bullet { display:flex; align-items:flex-start; gap:.65rem; font-size:.82rem; color:rgba(232,224,208,0.85); }
     .why-now-bullet-dot { width:5px; height:5px; border-radius:50%; background:#f08070; margin-top:.55rem; flex-shrink:0; }
 
     /* Data Tabs */
@@ -2916,95 +2938,64 @@
           </div>
         </div>
 
-        <!-- Team Grid -->
+        <!-- Team Grid (compact list) -->
         <div class="team-grid">
-          <!-- Yatsuka -->
-          <div class="team-card reveal reveal-delay-1">
-            <span class="team-badge">代表</span>
+          <div class="team-card reveal">
             <div class="team-avatar">矢</div>
-            <div class="team-name-jp">矢塚 貴史</div>
-            <div class="team-name-en">Takashi Yatsuka</div>
-            <div class="team-role">CEO · Licensed Real Estate Agent</div>
-            <p class="team-bio">Former Ichi-Ken Sakai Branch Manager. 宅建士. Enrolling Kinki University Architecture (Apr 2026). Bridges construction expertise with investment strategy.</p>
-            <div class="team-langs"><span class="team-lang">日本語</span></div>
+            <div class="team-card__info">
+              <div><span class="team-name-jp">矢塚 貴史</span><span class="team-name-en">Takashi Yatsuka</span></div>
+              <div class="team-role">CEO · 宅建士 · 元一建設堺営業所長</div>
+              <div class="team-langs"><span class="team-lang">日本語</span></div>
+            </div>
+            <span class="team-badge">代表</span>
           </div>
-          <!-- Shimizu -->
-          <div class="team-card reveal reveal-delay-2">
-            <span class="team-badge">管理建築士</span>
+          <div class="team-card reveal">
             <div class="team-avatar">清</div>
-            <div class="team-name-jp">清水 嵩士</div>
-            <div class="team-name-en">Takashi Shimizu</div>
-            <div class="team-role">Architecture Director · Class-2 Architect</div>
-            <p class="team-bio">Former Ichi-Ken Construction Chief. Manages 41 building permits/month. Expert in Ichi-Ken spec confirmation — fastest turnaround in Kansai.</p>
-            <div class="team-langs"><span class="team-lang">日本語</span></div>
+            <div class="team-card__info">
+              <div><span class="team-name-jp">清水 嵩士</span><span class="team-name-en">Takashi Shimizu</span></div>
+              <div class="team-role">Architecture Director · 二級建築士 · 41 permits/month</div>
+              <div class="team-langs"><span class="team-lang">日本語</span></div>
+            </div>
+            <span class="team-badge">管理建築士</span>
           </div>
-          <!-- Anna -->
-          <div class="team-card reveal reveal-delay-3">
-            <span class="team-badge">共同代表</span>
+          <div class="team-card reveal">
             <div class="team-avatar">A</div>
-            <div class="team-name-jp">アンナ</div>
-            <div class="team-name-en">Anna Yatsuka</div>
-            <div class="team-role">Co-CEO · International Liaison</div>
-            <p class="team-bio">Filipino co-representative with spouse visa. Bridges the gap between overseas buyers and Japan's real estate system. Fluent in English, Filipino, and Japanese.</p>
-            <div class="team-langs"><span class="team-lang">English</span><span class="team-lang">Filipino</span><span class="team-lang">日本語</span></div>
+            <div class="team-card__info">
+              <div><span class="team-name-jp">アンナ</span><span class="team-name-en">Anna Yatsuka</span></div>
+              <div class="team-role">Co-CEO · International Liaison</div>
+              <div class="team-langs"><span class="team-lang">English</span><span class="team-lang">Filipino</span><span class="team-lang">日本語</span></div>
+            </div>
+            <span class="team-badge">共同代表</span>
           </div>
-          <!-- Bian -->
-          <div class="team-card reveal reveal-delay-1">
+          <div class="team-card reveal">
             <div class="team-avatar">B</div>
-            <div class="team-name-jp">ビアン</div>
-            <div class="team-name-en">Bian</div>
-            <div class="team-role">Sales Administration · Foreign Support</div>
-            <p class="team-bio">Anna's cousin. Technical Humanities visa. Handles multilingual client communications, document processing, and investor onboarding with Filipino warmth.</p>
-            <div class="team-langs"><span class="team-lang">English</span><span class="team-lang">Filipino</span><span class="team-lang">日本語</span></div>
+            <div class="team-card__info">
+              <div><span class="team-name-jp">ビアン</span><span class="team-name-en">Bian</span></div>
+              <div class="team-role">Sales Administration · Foreign Client Support</div>
+              <div class="team-langs"><span class="team-lang">English</span><span class="team-lang">Filipino</span><span class="team-lang">日本語</span></div>
+            </div>
           </div>
-          <!-- Yatsuka Naomi (sister) -->
-          <div class="team-card reveal reveal-delay-2">
-            <span class="team-badge">行政書士</span>
+          <div class="team-card reveal">
             <div class="team-avatar">尚</div>
-            <div class="team-name-jp">矢塚 尚美</div>
-            <div class="team-name-en">Naomi Yatsuka</div>
-            <div class="team-role">Administrative Scrivener · Inheritance Specialist</div>
-            <p class="team-bio">CEO's sister. Immigration pink card holder. 18 years at Mitsuyoshi Tax Office — inheritance tax expert. Handles estate planning for overseas property owners.</p>
-            <div class="team-langs"><span class="team-lang">日本語</span></div>
+            <div class="team-card__info">
+              <div><span class="team-name-jp">矢塚 尚美</span><span class="team-name-en">Naomi Yatsuka</span></div>
+              <div class="team-role">行政書士 · 入管 · 相続税 18年</div>
+              <div class="team-langs"><span class="team-lang">日本語</span></div>
+            </div>
+            <span class="team-badge">行政書士</span>
           </div>
-          <!-- Karl / Kumiko future -->
-          <div class="team-card team-card--future reveal reveal-delay-3">
-            <span class="team-badge team-badge--soon">Joining 2026</span>
-            <div class="team-avatar" style="font-size:.85rem;">K+K</div>
-            <div class="team-name-jp">カール &amp; 久美子</div>
-            <div class="team-name-en">Karl &amp; Kumiko</div>
-            <div class="team-role">Architecture + Philippines Office</div>
-            <p class="team-bio">Karl (Architecture graduate, Technical Humanities visa, arriving Jun 2026) + Kumiko (CEU University 2028 grad) will lead our Manila CAD centre and expand SE Asia outreach.</p>
-            <div class="team-langs"><span class="team-lang">English</span><span class="team-lang">Filipino</span><span class="team-lang">日本語</span></div>
+          <div class="team-card team-card--future reveal">
+            <div class="team-avatar" style="font-size:.8rem;">K+K</div>
+            <div class="team-card__info">
+              <div><span class="team-name-jp">カール &amp; 久美子</span><span class="team-name-en">Karl &amp; Kumiko</span></div>
+              <div class="team-role">Architecture · Philippines Office (2026–)</div>
+              <div class="team-langs"><span class="team-lang">English</span><span class="team-lang">Filipino</span></div>
+            </div>
+            <span class="team-badge team-badge--soon">2026</span>
           </div>
         </div>
 
-        <!-- Pilot Story -->
-        <div class="pilot-card reveal">
-          <div class="pilot-quote-mark">"</div>
-          <div class="pilot-inner">
-            <div class="pilot-profile">
-              <div class="pilot-avatar">🇭🇰</div>
-              <div class="pilot-name">Marcus C.</div>
-              <div class="pilot-origin">Hong Kong · Investor since Oct 2024</div>
-              <div class="pilot-stats">
-                <div class="pilot-stat"><span class="pilot-stat-key">Property</span><span class="pilot-stat-val">Namba 1LDK</span></div>
-                <div class="pilot-stat"><span class="pilot-stat-key">Purchase</span><span class="pilot-stat-val">¥16,800,000</span></div>
-                <div class="pilot-stat"><span class="pilot-stat-key">Monthly STR avg</span><span class="pilot-stat-val">¥198,000</span></div>
-                <div class="pilot-stat"><span class="pilot-stat-key">Gross Yield</span><span class="pilot-stat-val" style="color:#80d4b0;">14.1%</span></div>
-                <div class="pilot-stat"><span class="pilot-stat-key">Managed from</span><span class="pilot-stat-val">Hong Kong 🏠→📱</span></div>
-              </div>
-            </div>
-            <div>
-              <p class="pilot-quote">"I've never physically visited the property. ANHOME handled the building inspection report, interior setup, Airbnb listing photos, pricing strategy, and sends me a monthly income statement. In six months I've earned ¥1,188,000 — that's more than my Hong Kong savings account earns in three years."</p>
-              <p class="pilot-detail">Purchased October 2024 via remote consultation (Zoom × 3 sessions, DocuSign closing). Property managed by local Airbnb partner. Monthly reports delivered in English. Tax filing supported by Mitsuyoshi Tax Office. Zero in-person visits required.</p>
-              <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
-                <a href="#live" class="btn btn--gold btn--sm">Book Your Consultation</a>
-                <a href="#play" class="btn btn--outline btn--sm">Run Your Numbers</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- 投資家の声：実績ができ次第追加予定 -->
 
       </div>
     </section><!-- /#trust -->
@@ -4001,28 +3992,47 @@
        §1  TOP — Petals + Tier Selection
     ════════════════════════════════════════ */
 
-    /* ── 花びら生成 ── */
+    /* ── 桜の花びら生成 ── */
     (function spawnPetals() {
       const container = document.getElementById('hero-petals');
       if (!container) return;
-      const count = 18;
+      const count = 28;
+      /* 桜の花びら SVG paths（5弁） */
+      const petalColors = ['#ffb7c5', '#ff9eb5', '#ffc8d5', '#ffaac0', '#f9a8c0'];
+      /* 花びら形状: SVG ellipse を回転して5枚重ねた桜 */
+      function makeSakuraSVG(color, size) {
+        const half = size / 2;
+        const petalW = half * 0.52;
+        const petalH = half * 0.92;
+        const petals = [0, 72, 144, 216, 288].map(angle =>
+          `<ellipse cx="${half}" cy="${half * 0.38}" rx="${petalW}" ry="${petalH}"
+            fill="${color}" opacity="0.82"
+            transform="rotate(${angle} ${half} ${half})"/>`
+        ).join('');
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}"
+          style="overflow:visible">${petals}
+          <circle cx="${half}" cy="${half}" r="${half*0.18}" fill="#ffe0ea" opacity="0.9"/>
+        </svg>`;
+      }
       for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
         p.className = 'petal';
-        const size    = 4 + Math.random() * 6;
-        const left    = Math.random() * 100;
-        const delay   = Math.random() * 14;
-        const dur     = 12 + Math.random() * 10;
-        const opacity = 0.2 + Math.random() * 0.45;
-        const hue     = Math.random() > 0.5 ? 'rgba(220,175,155,VAL)' : 'rgba(210,180,140,VAL)';
+        const size    = 10 + Math.random() * 12;
+        const left    = Math.random() * 102;
+        const delay   = Math.random() * 18;
+        const dur     = 14 + Math.random() * 12;
+        const opacity = 0.55 + Math.random() * 0.4;
+        const color   = petalColors[Math.floor(Math.random() * petalColors.length)];
+        const swayDur = 4 + Math.random() * 4;
+        const swayDelay = Math.random() * 4;
+        p.innerHTML = makeSakuraSVG(color, size);
         p.style.cssText = `
           width:${size}px; height:${size}px;
           left:${left}%;
-          animation-duration:${dur}s;
-          animation-delay:${delay}s;
+          top: -${size + 10}px;
+          animation: petalFall ${dur}s ${delay}s linear infinite,
+                     petalSway ${swayDur}s ${swayDelay}s ease-in-out infinite;
           opacity:${opacity};
-          background:${hue.replace('VAL', String(opacity))};
-          border-radius:${Math.random()>0.5?'50% 10% 50% 10%':'20% 50% 20% 50%'};
         `;
         container.appendChild(p);
       }
