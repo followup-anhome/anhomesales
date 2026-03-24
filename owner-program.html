@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E1RKVLSXNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E1RKVLSXNK');
+  </script>
+  <title>Owner Program | ANHOME — Become a Japan Property Owner</title>
+  <meta name="description" content="Turn Japan's vacant homes into high-yield assets. Minpaku, share house, and new build owner programs — with full one-stop support by Follow-Up Co., Ltd." />
+  <meta property="og:title" content="Owner Program | ANHOME" />
+  <meta property="og:description" content="Three paths to owning income-generating property in Japan. No experience required." />
+  <meta property="og:url" content="https://anhomesales.com/owner-program.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES — OWNER PROGRAM / ANHOME
+       Matches main site design system exactly
+    ============================================================ */
+    :root {
+      --navy-deep:   #0a1628;
+      --navy-mid:    #0f2044;
+      --navy-light:  #1a3060;
+      --navy-pale:   #243c72;
+
+      --gold:        #b49b64;
+      --gold-bright: #d4bc8a;
+      --gold-pale:   #e8d9b8;
+      --gold-dim:    #7a6a44;
+
+      --cream:       #faf8f3;
+      --ivory:       #f0ece3;
+
+      --white:       #ffffff;
+      --text-main:   #e8e0d0;
+      --text-sub:    #ddd8cc;
+      --text-muted:  #bdb5a6;
+
+      --font-serif:  'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
+
+      --space-xs:   0.5rem;
+      --space-sm:   1rem;
+      --space-md:   2rem;
+      --space-lg:   4rem;
+      --space-xl:   7rem;
+
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  16px;
+      --radius-pill: 999px;
+
+      --ease-out:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --duration-fast: 0.2s;
+      --duration-base: 0.4s;
+
+      --shadow-card:   0 4px 32px rgba(0,0,0,0.35);
+      --shadow-glow:   0 0 40px rgba(180,155,100,0.18);
+      --shadow-subtle: 0 2px 12px rgba(0,0,0,0.2);
+
+      --z-nav: 100;
+    }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html {
+      font-size: 20px;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--navy-deep);
+      color: var(--text-main);
+      font-family: var(--font-serif);
+      font-weight: 300;
+      line-height: 1.75;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; transition: color var(--duration-fast) var(--ease-out); }
+    img { display: block; max-width: 100%; }
+    button { font-family: var(--font-serif); cursor: pointer; border: none; background: none; -webkit-tap-highlight-color: transparent; }
+    ul, ol { list-style: none; }
+
+    /* ── Typography ── */
+    .overline {
+      font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);
+    }
+    .display-xl {
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 300; letter-spacing: 0.04em; line-height: 1.1;
+    }
+    .display-lg {
+      font-size: clamp(1.8rem, 4vw, 3.6rem);
+      font-weight: 300; letter-spacing: 0.04em; line-height: 1.15;
+    }
+    .display-md {
+      font-size: clamp(1.4rem, 3vw, 2.4rem);
+      font-weight: 300; letter-spacing: 0.03em; line-height: 1.2;
+    }
+    .body-text {
+      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+      font-weight: 300; line-height: 1.9; color: var(--text-sub);
+    }
+    .text-gold        { color: var(--gold); }
+    .text-gold-bright { color: var(--gold-bright); }
+    .text-center      { text-align: center; }
+    .text-italic      { font-style: italic; }
+
+    /* ── Layout ── */
+    .container { width: min(1200px, 92vw); margin-inline: auto; }
+    .container--narrow { width: min(820px, 92vw); margin-inline: auto; }
+    .section { padding-block: var(--space-xl); position: relative; }
+    .section--light { background-color: var(--cream); color: var(--navy-deep); }
+    .section--mid { background-color: var(--navy-mid); }
+
+    /* ── Gold Divider ── */
+    .gold-divider {
+      width: 56px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin-block: var(--space-md);
+    }
+    .gold-divider--center { margin-inline: auto; }
+
+    /* ── Section Label ── */
+    .section-label {
+      display: flex; align-items: center; gap: 1.2rem; margin-bottom: 3rem;
+    }
+    .section-label__num { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-dim); }
+    .section-label__line { width: 48px; height: 1px; background: var(--gold); opacity: 0.5; }
+    .section-label__name { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.85rem 2.2rem; font-family: var(--font-serif);
+      font-size: 0.8rem; font-weight: 400; letter-spacing: 0.2em;
+      text-transform: uppercase; border-radius: var(--radius-sm);
+      transition: all var(--duration-base) var(--ease-out);
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn--gold { background: var(--gold); color: var(--navy-deep); border: 1px solid var(--gold); }
+    .btn--gold:hover { background: var(--gold-bright); border-color: var(--gold-bright); transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+    .btn--outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+    .btn--outline:hover { background: rgba(180,155,100,0.1); transform: translateY(-2px); }
+    .btn--ghost { background: transparent; color: var(--text-sub); border: 1px solid rgba(255,255,255,0.12); }
+    .btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .btn--lg { padding: 1.1rem 3rem; font-size: 0.88rem; letter-spacing: 0.28em; }
+    .btn--sm { padding: 0.55rem 1.4rem; font-size: 0.72rem; }
+
+    /* ── Card ── */
+    .card {
+      background: var(--navy-mid); border: 1px solid rgba(180,155,100,0.14);
+      border-radius: var(--radius-lg); padding: var(--space-md);
+      transition: all var(--duration-base) var(--ease-out);
+      position: relative; overflow: hidden;
+    }
+    .card:hover {
+      border-color: rgba(180,155,100,0.4);
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+      transform: translateY(-4px);
+    }
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(180,155,100,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-block; padding: 0.25rem 0.75rem;
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      border-radius: var(--radius-pill);
+    }
+    .badge--gold { background: rgba(180,155,100,0.15); color: var(--gold); border: 1px solid rgba(180,155,100,0.3); }
+    .badge--teal { background: rgba(56,178,172,0.15); color: #38b2ac; border: 1px solid rgba(56,178,172,0.3); }
+    .badge--amber { background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #main-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      padding: 1.4rem 0; z-index: var(--z-nav);
+      transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
+    }
+    #main-nav.scrolled {
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(180,155,100,0.12);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: min(1200px, 92vw); margin-inline: auto;
+    }
+    .nav__logo { display: flex; flex-direction: column; line-height: 1; gap: 0.18rem; }
+    .nav__logo-sub { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-dim); }
+    .nav__logo-main { font-size: 1.2rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-main); }
+    .nav__logo-main span { color: var(--gold); }
+    .nav__links {
+      display: flex; align-items: center; gap: 0.2rem;
+    }
+    .nav__link {
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-muted); padding: 0.4rem 0.7rem;
+      transition: color var(--duration-fast) var(--ease-out);
+      position: relative;
+    }
+    .nav__link::after {
+      content: ''; position: absolute; bottom: 0; left: 50%;
+      transform: translateX(-50%); width: 0; height: 1px;
+      background: var(--gold); transition: width var(--duration-base) var(--ease-out);
+    }
+    .nav__link:hover { color: var(--gold); }
+    .nav__link:hover::after { width: 60%; }
+    .nav__link.active { color: var(--gold); }
+    .nav__link.active::after { width: 60%; }
+
+    /* Hamburger */
+    .nav__hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 8px; cursor: pointer; z-index: 101;
+    }
+    .nav__hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--text-main); transition: all 0.3s;
+    }
+    .nav__hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav__hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav__hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Drawer */
+    .nav__drawer {
+      display: none; position: fixed; top: 0; right: -100%;
+      width: min(320px, 85vw); height: 100vh;
+      background: var(--navy-mid); z-index: 200;
+      flex-direction: column; padding: 5rem 2rem 2rem;
+      transition: right 0.4s cubic-bezier(0.65,0,0.35,1);
+      gap: 0.4rem;
+    }
+    .nav__drawer.open { right: 0; }
+    .nav__drawer-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 199;
+    }
+    .nav__drawer-overlay.open { display: block; }
+    .nav__drawer-link {
+      font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-sub); padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(180,155,100,0.08);
+      transition: color var(--duration-fast);
+    }
+    .nav__drawer-link:hover { color: var(--gold); }
+    .nav__drawer-link.active { color: var(--gold); }
+    .nav__drawer-close {
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      font-size: 1.4rem; color: var(--text-muted); cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+      .nav__drawer { display: flex; }
+    }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    #hero {
+      min-height: 100svh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      background: var(--navy-deep);
+    }
+    .hero__bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26,48,96,0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(180,155,100,0.08) 0%, transparent 60%);
+    }
+    /* Cherry blossom petals via CSS */
+    .hero__petals {
+      position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;
+    }
+    .petal {
+      position: absolute;
+      width: 8px; height: 8px;
+      background: rgba(255,182,193,0.25);
+      border-radius: 50% 0 50% 0;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0%   { transform: translateY(-20px) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+    .hero__content {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding: 8rem var(--space-md) var(--space-xl);
+      width: min(900px, 92vw);
+    }
+    .hero__eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem; display: block;
+    }
+    .hero__title {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 300; letter-spacing: 0.04em; line-height: 1.08;
+      color: var(--white); margin-bottom: 1.5rem;
+    }
+    .hero__title em {
+      font-style: italic; color: var(--gold-bright);
+    }
+    .hero__subtitle {
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 300; color: var(--text-sub);
+      line-height: 1.7; margin-bottom: 3rem;
+      max-width: 620px; margin-inline: auto;
+    }
+    .hero__cta-row {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .hero__no-data {
+      font-size: 0.68rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-top: 2rem;
+    }
+    .hero__no-data::before {
+      content: '✦ ';  color: var(--gold-dim);
+    }
+    .hero__scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      z-index: 2; animation: bob 2.5s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+    .hero__scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+    }
+    .hero__scroll-text {
+      font-size: 0.58rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold-dim);
+    }
+
+    /* ============================================================
+       COURSES SECTION
+    ============================================================ */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin-top: 3rem;
+    }
+    .course-card {
+      background: var(--navy-mid);
+      border: 1px solid rgba(180,155,100,0.14);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      position: relative; overflow: hidden;
+      transition: all var(--duration-base) var(--ease-out);
+      cursor: default;
+    }
+    .course-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(180,155,100,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .course-card:hover {
+      border-color: rgba(180,155,100,0.45);
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+      transform: translateY(-6px);
+    }
+    .course-card--featured {
+      border-color: rgba(180,155,100,0.35);
+      background: linear-gradient(145deg, var(--navy-mid) 0%, rgba(26,48,96,0.8) 100%);
+    }
+    .course-card--featured::after {
+      content: 'Most Popular';
+      position: absolute; top: 1.2rem; right: 1.2rem;
+      font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+      background: var(--gold); color: var(--navy-deep);
+      padding: 0.25rem 0.7rem; border-radius: var(--radius-pill);
+    }
+    .course-label {
+      font-size: 0.62rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold-dim);
+      margin-bottom: 0.6rem;
+    }
+    .course-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 400; letter-spacing: 0.04em;
+      color: var(--gold-pale); margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+    .course-target {
+      font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(180,155,100,0.12);
+    }
+    .course-desc {
+      font-size: clamp(0.88rem, 1.4vw, 1rem);
+      color: var(--text-sub); line-height: 1.85;
+      margin-bottom: 1.8rem;
+    }
+    .course-features {
+      display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem;
+    }
+    .course-feature {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.85rem; color: var(--text-sub);
+    }
+    .course-feature__icon {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 0.1rem;
+      border: 1px solid rgba(180,155,100,0.4); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.55rem; color: var(--gold);
+    }
+    .course-highlight {
+      background: rgba(180,155,100,0.06);
+      border: 1px solid rgba(180,155,100,0.12);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .course-highlight__label {
+      font-size: 0.6rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.4rem;
+    }
+    .course-highlight__value {
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      color: var(--gold); font-weight: 400; letter-spacing: 0.04em;
+    }
+
+    /* ── Course icons ── */
+    .course-icon {
+      width: 64px; height: 64px; margin-bottom: 1.8rem;
+      border: 1px solid rgba(180,155,100,0.2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      background: rgba(180,155,100,0.06);
+    }
+
+    /* ============================================================
+       STEPS SECTION
+    ============================================================ */
+    .steps-wrapper {
+      position: relative;
+      display: flex; flex-direction: column; gap: 0;
+      margin-top: 3rem;
+    }
+    .steps-line {
+      position: absolute; left: 24px; top: 40px; bottom: 40px;
+      width: 1px;
+      background: linear-gradient(180deg, var(--gold) 0%, rgba(180,155,100,0.1) 100%);
+    }
+    .step-item {
+      display: flex; align-items: flex-start; gap: 2rem;
+      padding: 1.8rem 1.8rem 1.8rem 0;
+      border-bottom: 1px solid rgba(180,155,100,0.06);
+      transition: background var(--duration-base);
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-item:hover { background: rgba(180,155,100,0.03); border-radius: var(--radius-md); }
+    .step-num {
+      width: 48px; height: 48px; flex-shrink: 0;
+      border: 1px solid rgba(180,155,100,0.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; letter-spacing: 0.1em;
+      color: var(--gold); background: var(--navy-deep);
+      position: relative; z-index: 1;
+    }
+    .step-body { padding-top: 0.3rem; }
+    .step-title {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400; color: var(--gold-pale);
+      letter-spacing: 0.03em; margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: clamp(0.85rem, 1.4vw, 0.98rem);
+      color: var(--text-sub); line-height: 1.8;
+    }
+    .step-tag {
+      display: inline-block; margin-top: 0.6rem;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 0.2rem 0.65rem; border-radius: var(--radius-pill);
+      background: rgba(180,155,100,0.1); color: var(--gold);
+      border: 1px solid rgba(180,155,100,0.2);
+    }
+
+    /* ============================================================
+       ROI CALLOUT
+    ============================================================ */
+    .roi-callout {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, rgba(26,48,96,0.6) 100%);
+      border: 1px solid rgba(180,155,100,0.25);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 3rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .roi-callout::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(180,155,100,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .roi-callout__num {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 300; color: var(--gold);
+      letter-spacing: 0.04em; line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .roi-callout__label {
+      font-size: 0.7rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .roi-stat-row {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1.5rem 3rem; margin-bottom: 2.5rem;
+    }
+    .roi-stat { text-align: center; }
+    .roi-stat__val {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300; color: var(--gold-bright); letter-spacing: 0.04em;
+    }
+    .roi-stat__label {
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted); margin-top: 0.3rem;
+    }
+
+    /* ============================================================
+       CTA SECTION
+    ============================================================ */
+    .cta-section {
+      padding-block: var(--space-xl);
+      background: linear-gradient(180deg, var(--navy-deep) 0%, rgba(15,32,68,0.5) 100%);
+      text-align: center;
+    }
+    .cta-buttons {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .btn--wa {
+      background: #25d366; color: #fff;
+      border: 1px solid #25d366;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+    }
+    .btn--wa:hover {
+      background: #1da851; border-color: #1da851;
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(37,211,102,0.25);
+    }
+    .wa-icon { width: 1.2em; height: 1.2em; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      padding-block: 3rem;
+      border-top: 1px solid rgba(180,155,100,0.12);
+    }
+    .footer__inner {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .footer__brand { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+    .footer__links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    .footer__link { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color var(--duration-fast); }
+    .footer__link:hover { color: var(--gold); }
+    .footer__copy { font-size: 0.62rem; color: var(--gold-dim); }
+
+    /* ============================================================
+       SCROLL ANIMATION
+    ============================================================ */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1; transform: translateY(0);
+    }
+    .reveal--delay-1 { transition-delay: 0.1s; }
+    .reveal--delay-2 { transition-delay: 0.2s; }
+    .reveal--delay-3 { transition-delay: 0.3s; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 768px) {
+      :root { --space-xl: 4.5rem; }
+      .courses-grid { grid-template-columns: 1fr; }
+      .roi-callout { padding: 2.5rem 1.5rem; }
+      .steps-line { left: 23px; }
+      .footer__inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .hero__cta-row { flex-direction: column; width: 100%; }
+      .hero__cta-row .btn { width: 100%; justify-content: center; }
+      .cta-buttons { flex-direction: column; width: 100%; }
+      .cta-buttons .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="ANHOME — Back to home">
+        <span class="nav__logo-sub">The Future</span>
+        <span class="nav__logo-main">AN<span>HOME</span></span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav__links" role="list">
+        <li><a href="index.html#top"      class="nav__link">Top</a></li>
+        <li><a href="index.html#play"     class="nav__link">Play</a></li>
+        <li><a href="index.html#discover" class="nav__link">Discover</a></li>
+        <li><a href="index.html#trust"    class="nav__link">Trust</a></li>
+        <li><a href="index.html#live"     class="nav__link">Live</a></li>
+        <li><a href="index.html#data"     class="nav__link">Data</a></li>
+        <li><a href="owner-program.html"  class="nav__link active">Owner</a></li>
+      </ul>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav__drawer-overlay" id="nav-overlay"></div>
+  <nav class="nav__drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <button class="nav__drawer-close" id="nav-drawer-close" aria-label="Close menu">✕</button>
+    <a href="index.html#top"      class="nav__drawer-link">Top</a>
+    <a href="index.html#play"     class="nav__drawer-link">Play</a>
+    <a href="index.html#discover" class="nav__drawer-link">Discover</a>
+    <a href="index.html#trust"    class="nav__drawer-link">Trust</a>
+    <a href="index.html#live"     class="nav__drawer-link">Live</a>
+    <a href="index.html#data"     class="nav__drawer-link">Data</a>
+    <a href="owner-program.html"  class="nav__drawer-link active">Owner Program</a>
+  </nav>
+
+  <!-- ============================================================
+       § 1  HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__petals" id="petals-container"></div>
+
+    <div class="hero__content">
+      <span class="hero__eyebrow">Owner Program — Follow-Up Co., Ltd.</span>
+      <h1 class="hero__title">
+        Become a<br>
+        Japan Property<br>
+        <em>Owner</em>
+      </h1>
+      <p class="hero__subtitle">
+        Turn Japan's vacant homes into high-yield assets.
+        Three paths. One trusted partner. Full support from purchase to operation.
+      </p>
+      <div class="hero__cta-row">
+        <a href="index.html#play" class="btn btn--gold btn--lg">
+          Calculate My ROI →
+        </a>
+        <a href="#courses" class="btn btn--outline">
+          Explore Programs ↓
+        </a>
+      </div>
+      <p class="hero__no-data">No personal data required to explore</p>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       § 2  COURSES
+  ============================================================ -->
+  <section id="courses" class="section">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__num">02</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__name">Three Paths to Ownership</span>
+      </div>
+
+      <div class="container--narrow" style="margin-bottom:2rem;">
+        <h2 class="display-lg reveal reveal--delay-1">
+          Choose Your<br><em class="text-italic text-gold">Owner Course</em>
+        </h2>
+        <div class="gold-divider reveal reveal--delay-2"></div>
+        <p class="body-text reveal reveal--delay-2">
+          Whether you're drawn to the charm of a heritage townhouse, the efficiency of a brand-new build,
+          or the social impact of quality shared housing — we have a program designed for you.
+        </p>
+      </div>
+
+      <div class="courses-grid">
+
+        <!-- ── Course A ── -->
+        <div class="course-card reveal reveal--delay-1">
+          <div class="course-icon">🏯</div>
+          <div class="course-label">Course A</div>
+          <h3 class="course-title">Vacant Home<br>Renovation</h3>
+          <p class="course-target">For: International buyers attracted to traditional Japanese architecture</p>
+          <p class="course-desc">
+            Breathe new life into Japan's <em>akiya</em> (vacant homes).
+            We source, purchase, and renovate heritage properties into fully licensed minpaku
+            guesthouses — preserving the beauty of Japanese craftsmanship while generating
+            competitive rental yields.
+          </p>
+          <div class="course-features">
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Licensed real estate brokerage — agency-owned listings only</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Full post-purchase support &amp; ongoing management</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>One-stop: purchase → renovation → minpaku license</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Follow-Up Co., Ltd. handles all operational management</span>
+            </div>
+          </div>
+          <div class="course-highlight">
+            <div class="course-highlight__label">Best For</div>
+            <div class="course-highlight__value">Cultural-value investment</div>
+          </div>
+          <a href="#contact" class="btn btn--outline btn--sm" style="width:100%;justify-content:center;">
+            Inquire About Course A →
+          </a>
+        </div>
+
+        <!-- ── Course B ── -->
+        <div class="course-card course-card--featured reveal reveal--delay-2">
+          <div class="course-icon">🏠</div>
+          <div class="course-label">Course B</div>
+          <h3 class="course-title">Hajimekensetsu<br>New Build</h3>
+          <p class="course-target">For: Return-focused investors seeking maximum efficiency</p>
+          <p class="course-desc">
+            Japan's #1 homebuilder delivers brand-new properties ready for minpaku conversion.
+            Lower initial renovation cost, faster operational start, and the peace of mind that
+            comes with Japan's most trusted new-build warranty.
+          </p>
+          <div class="course-features">
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Seismic Grade 3 — Japan's highest earthquake resistance</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>35-year structural warranty included</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Minimal renovation needed — lower upfront cost</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Operational within 3–6 months of purchase</span>
+            </div>
+          </div>
+          <div class="course-highlight">
+            <div class="course-highlight__label">Advantage</div>
+            <div class="course-highlight__value">Fastest path to yield</div>
+          </div>
+          <a href="index.html#play" class="btn btn--gold btn--sm" style="width:100%;justify-content:center;">
+            Calculate My ROI →
+          </a>
+        </div>
+
+        <!-- ── Course C ── -->
+        <div class="course-card reveal reveal--delay-3">
+          <div class="course-icon">🌏</div>
+          <div class="course-label">Course C</div>
+          <h3 class="course-title">International<br>Share House</h3>
+          <p class="course-target">For: Socially-conscious investors &amp; overseas property owners</p>
+          <p class="course-desc">
+            Meet growing demand from Kansai International Airport's international workforce.
+            New Hajimekensetsu builds converted into clean, safe, fully-managed share houses
+            for Specified Skilled Worker (<em>Tokutei Ginou</em>) and Engineer / Specialist visa holders.
+          </p>
+          <div class="course-features">
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Kansai International Airport area — permanent demand base</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Relaxed guarantor requirements for foreign-national owners</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Social impact + stable multi-tenant income</span>
+            </div>
+            <div class="course-feature">
+              <div class="course-feature__icon">✦</div>
+              <span>Bilingual management team (Japanese / English / Filipino)</span>
+            </div>
+          </div>
+          <div class="course-highlight">
+            <div class="course-highlight__label">Best For</div>
+            <div class="course-highlight__value">Stable long-term income</div>
+          </div>
+          <a href="#contact" class="btn btn--outline btn--sm" style="width:100%;justify-content:center;">
+            Inquire About Course C →
+          </a>
+        </div>
+
+      </div><!-- /courses-grid -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       § 3  ROI CALLOUT
+  ============================================================ -->
+  <section class="section section--mid" id="roi-overview">
+    <div class="container">
+      <div class="roi-callout reveal">
+        <div class="roi-callout__num">8–12<span style="font-size:0.5em;vertical-align:super;color:var(--gold-dim)">%</span></div>
+        <div class="roi-callout__label">Estimated Annual Gross Yield — Minpaku / Share House</div>
+
+        <div class="roi-stat-row">
+          <div class="roi-stat">
+            <div class="roi-stat__val">¥15–22M</div>
+            <div class="roi-stat__label">Typical Entry Price</div>
+          </div>
+          <div class="roi-stat">
+            <div class="roi-stat__val">180 days</div>
+            <div class="roi-stat__label">Annual Minpaku Limit</div>
+          </div>
+          <div class="roi-stat">
+            <div class="roi-stat__val">35yr</div>
+            <div class="roi-stat__label">New Build Warranty</div>
+          </div>
+          <div class="roi-stat">
+            <div class="roi-stat__val">Grade 3</div>
+            <div class="roi-stat__label">Seismic Rating</div>
+          </div>
+        </div>
+
+        <p class="body-text" style="margin-bottom:2rem;max-width:600px;margin-inline:auto;">
+          Numbers vary by property and occupancy. Use our interactive simulator to model
+          your specific scenario — no registration, no personal data.
+        </p>
+        <a href="index.html#play" class="btn btn--gold btn--lg">
+          Calculate Your Expected Yield →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       § 4  HOW IT WORKS — 5 STEPS
+  ============================================================ -->
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-label__num">04</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__name">Owner Journey</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-lg); align-items:start;">
+
+        <div>
+          <h2 class="display-lg reveal">
+            From First Inquiry<br>
+            to <em class="text-italic text-gold">Operating Owner</em>
+          </h2>
+          <div class="gold-divider reveal reveal--delay-1"></div>
+          <p class="body-text reveal reveal--delay-1">
+            Five clear steps — each managed by our bilingual team.
+            You make the decisions; we handle the complexity.
+          </p>
+        </div>
+
+        <div class="steps-wrapper reveal reveal--delay-2">
+          <div class="steps-line" aria-hidden="true"></div>
+
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3 class="step-title">Free Consultation</h3>
+              <p class="step-desc">Online or in-person session to understand your goals, budget, and preferred course. Available in English, Japanese, and Filipino.</p>
+              <span class="step-tag">Online available</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3 class="step-title">Property Selection &amp; ROI Modelling</h3>
+              <p class="step-desc">We present pre-vetted properties with projected yield simulations. You select — we advise.</p>
+              <span class="step-tag">No obligation</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3 class="step-title">Purchase &amp; Renovation</h3>
+              <p class="step-desc">Our licensed real estate agents and in-house architects handle the full transaction and any necessary fit-out work.</p>
+              <span class="step-tag">Fully managed</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3 class="step-title">Minpaku / Share House Licence</h3>
+              <p class="step-desc">We navigate Japan's minpaku permit process on your behalf — legal compliance, neighbour notices, and municipal approvals.</p>
+              <span class="step-tag">We handle everything</span>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h3 class="step-title">Operations &amp; Management</h3>
+              <p class="step-desc">Guest check-in, cleaning coordination, revenue reporting, and ongoing maintenance — all managed by Follow-Up Co., Ltd.</p>
+              <span class="step-tag">Passive income</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       § 5  CONTACT / CTA
+  ============================================================ -->
+  <section id="contact" class="cta-section">
+    <div class="container--narrow">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="section-label__num">05</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__name">Start Your Journey</span>
+      </div>
+
+      <h2 class="display-lg reveal reveal--delay-1" style="margin-bottom:1rem;">
+        Ready to become an<br>
+        <em class="text-italic text-gold">Owner?</em>
+      </h2>
+      <div class="gold-divider gold-divider--center reveal reveal--delay-1"></div>
+      <p class="body-text text-center reveal reveal--delay-2" style="margin-bottom:0;">
+        Reach us via WhatsApp for a quick chat, or submit a formal inquiry through
+        our website. No personal data required to start.
+      </p>
+
+      <div class="cta-buttons reveal reveal--delay-2">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/81724895661?text=Hello%2C%20I%27m%20interested%20in%20the%20Owner%20Program."
+           target="_blank" rel="noopener" class="btn btn--wa btn--lg">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+
+        <!-- Contact Form -->
+        <a href="https://www.anhome.co.jp/contact/"
+           target="_blank" rel="noopener" class="btn btn--outline btn--lg">
+          ✦ Inquiry Form (anhome.co.jp)
+        </a>
+
+        <!-- ROI Simulator -->
+        <a href="index.html#play" class="btn btn--ghost btn--lg">
+          Try the ROI Simulator →
+        </a>
+      </div>
+
+      <p class="hero__no-data" style="margin-top:2.5rem;">✦ No personal data required to explore</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand">ANHOME — Follow-Up Co., Ltd.</div>
+          <div class="footer__copy" style="margin-top:0.4rem;">© 2025 Follow-Up Co., Ltd. All rights reserved.</div>
+        </div>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="index.html#play" class="footer__link">ROI Simulator</a>
+          <a href="owner-program.html" class="footer__link" style="color:var(--gold);">Owner Program</a>
+          <a href="https://www.anhome.co.jp/contact/" target="_blank" rel="noopener" class="footer__link">Contact</a>
+          <a href="https://www.anhome.co.jp" target="_blank" rel="noopener" class="footer__link">anhome.co.jp ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    /* ── Nav scroll behaviour ── */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Hamburger / Drawer ── */
+    const hamburger  = document.getElementById('nav-hamburger');
+    const drawer     = document.getElementById('nav-drawer');
+    const overlay    = document.getElementById('nav-overlay');
+    const closeBtn   = document.getElementById('nav-drawer-close');
+
+    function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+    hamburger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+    overlay.addEventListener('click', closeDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    document.querySelectorAll('.nav__drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+
+    /* ── Cherry blossom petals ── */
+    (function() {
+      const container = document.getElementById('petals-container');
+      const count = 18;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'petal';
+        p.style.cssText = [
+          `left:${Math.random()*100}%`,
+          `top:-${Math.random()*20+5}px`,
+          `width:${6+Math.random()*6}px`,
+          `height:${6+Math.random()*6}px`,
+          `animation-duration:${8+Math.random()*12}s`,
+          `animation-delay:${Math.random()*10}s`,
+          `opacity:${0.1+Math.random()*0.25}`
+        ].join(';');
+        container.appendChild(p);
+      }
+    })();
+
+    /* ── Scroll reveal ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer  = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ── Steps responsive layout ── */
+    function adjustStepsLayout() {
+      const stepsGrid = document.querySelector('#how-it-works .container > div');
+      if (!stepsGrid) return;
+      if (window.innerWidth < 768) {
+        stepsGrid.style.gridTemplateColumns = '1fr';
+      } else {
+        stepsGrid.style.gridTemplateColumns = '1fr 1fr';
+      }
+    }
+    adjustStepsLayout();
+    window.addEventListener('resize', adjustStepsLayout, { passive: true });
+  </script>
+</body>
+</html>
