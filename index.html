@@ -20,7 +20,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
@@ -29,27 +29,27 @@
     ============================================================ */
     :root {
       /* ── Core Palette ── */
-      --navy-deep:   #0a1628;   /* 最深背景 */
-      --navy-mid:    #0f2044;   /* カード・セクション背景 */
-      --navy-light:  #1a3060;   /* ホバー・アクセント */
-      --navy-pale:   #243c72;   /* ボーダー・区切り */
+      --navy-deep:   #f8f6f1;   /* 最深背景 */
+      --navy-mid:    #f0ede6;   /* カード・セクション背景 */
+      --navy-light:  #e8e4da;   /* ホバー・アクセント */
+      --navy-pale:   #d8d3c8;   /* ボーダー・区切り */
 
       --gold:        #b49b64;   /* メインゴールド */
       --gold-bright: #d4bc8a;   /* ホバーゴールド */
-      --gold-pale:   #e8d9b8;   /* テキストアクセント */
+      --gold-pale:   #8b6914;   /* テキストアクセント */
       --gold-dim:    #7a6a44;   /* 控えめゴールド */
 
       --cream:       #faf8f3;   /* ライトセクション背景 */
       --ivory:       #f0ece3;   /* カード背景（ライト） */
 
       --white:       #ffffff;
-      --text-main:   #e8e0d0;   /* 本文テキスト */
-      --text-sub:    #ddd8cc;   /* サブテキスト ≈ rgba(232,224,208,0.95) */
-      --text-muted:  #bdb5a6;   /* ミュートテキスト（年配者向け高コントラスト） */
+      --text-main:   #1a1a2e;   /* 本文テキスト */
+      --text-sub:    #2d2d4e;   /* サブテキスト ≈ rgba(232,224,208,0.95) */
+      --text-muted:  #5a5a7a;   /* ミュートテキスト（年配者向け高コントラスト） */
 
       /* ── Typography ── */
-      --font-serif:  'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
-      --font-jp:     'Noto Serif JP', 'Cormorant Garamond', serif;
+      --font-serif:  'Noto Sans JP', 'Inter', sans-serif;
+      --font-jp:     'Noto Sans JP', 'Inter', sans-serif;
 
       /* ── Spacing Scale ── */
       --space-xs:   0.5rem;
@@ -1072,7 +1072,7 @@
     }
 
     /* ============================================================
-       §2  PLAY — 4-Tap ROI Simulator
+       §2  PLAY — 4-Tap Annual Profit Rate (ROI) Simulator
     ============================================================ */
     #play {
       background: var(--navy-mid);
@@ -1372,7 +1372,7 @@
     }
     .sim-metric--highlight .sim-metric-value { color: var(--gold-bright); }
 
-    /* AirDNA Row */
+    /* AirDNA Market Data Row */
     .sim-airdna {
       background: rgba(0,0,0,0.25);
       border: 1px solid rgba(255,255,255,0.06);
@@ -2196,6 +2196,145 @@
     }
 
 
+
+    /* ============================================================
+       LIGHT MODE OVERRIDE — 全面ライト化
+       背景：#f8f6f1 / テキスト：#1a1a2e / アクセント：#b49b64
+    ============================================================ */
+
+    /* ─── フォント ─── */
+    *, body, button, input, select, textarea {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif !important;
+      font-weight: 700 !important;
+    }
+
+    /* ─── ベース背景・テキスト ─── */
+    html, body {
+      background-color: #f8f6f1 !important;
+      color: #1a1a2e !important;
+      font-size: 18px !important;
+    }
+    p, li, td, dd, dt, figcaption { font-size: 1rem !important; line-height: 1.85 !important; color: #2d2d4e !important; }
+    h1, h2, h3, h4, h5, h6 { color: #1a1a2e !important; }
+    .display-xl, .display-lg, .display-md { color: #1a1a2e !important; font-weight: 700 !important; }
+    .body-text { color: #2d2d4e !important; font-size: 1.1rem !important; line-height: 1.85 !important; }
+    .text-sub  { color: #2d2d4e !important; }
+    .text-muted, small { color: #5a5a7a !important; font-size: 0.88rem !important; }
+    .overline { font-size: 0.78rem !important; font-weight: 600 !important; color: #b49b64 !important; letter-spacing: 0.2em !important; }
+
+    /* ─── セクション交互背景 ─── */
+    section { background-color: #f8f6f1 !important; color: #1a1a2e !important; }
+    .section--light { background-color: #ffffff !important; color: #1a1a2e !important; }
+    .section--mid, .section--dark {
+      background-color: #1a1a2e !important;
+      color: #f8f6f1 !important;
+    }
+    .section--mid *, .section--dark * { color: #f8f6f1 !important; }
+    .section--mid .text-gold, .section--dark .text-gold,
+    .section--mid .gold, .section--dark .gold { color: #b49b64 !important; }
+
+    /* ─── ヒーロー（#top）はダーク維持 ─── */
+    #top {
+      background: linear-gradient(160deg, #1a1a2e 0%, #0f2044 50%, #1a3060 100%) !important;
+    }
+    #top *, #top h1, #top h2, #top p, #top span { color: #f8f6f1 !important; }
+    #top .text-gold, #top .overline { color: #b49b64 !important; }
+    #top .display-xl { color: #ffffff !important; }
+
+    /* ─── ナビゲーション ─── */
+    #main-nav {
+      background: rgba(248,246,241,0.97) !important;
+      border-bottom: 1px solid rgba(180,155,100,0.2) !important;
+    }
+    #main-nav.scrolled {
+      background: rgba(248,246,241,0.97) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08) !important;
+    }
+    .nav__link { color: #1a1a2e !important; font-size: 0.72rem !important; font-weight: 500 !important; }
+    .nav__link:hover, .nav__link.active { color: #b49b64 !important; }
+    .nav__logo-main { color: #1a1a2e !important; }
+    .nav__logo-sub  { color: #6b5a30 !important; }
+    .nav__logo-main span { color: #b49b64 !important; }
+    .nav__hamburger span { background: #1a1a2e !important; }
+    .nav__drawer { background: #f8f6f1 !important; }
+    .nav__drawer-link { color: #1a1a2e !important; border-bottom-color: rgba(26,26,46,0.08) !important; font-weight: 500 !important; }
+    .nav__drawer-link:hover { color: #b49b64 !important; }
+    .nav__lang button { color: #5a5a7a !important; border-color: rgba(26,26,46,0.15) !important; }
+    .nav__lang button.active { background: #b49b64 !important; color: #ffffff !important; }
+
+    /* ─── カード ─── */
+    .card {
+      background: #ffffff !important;
+      border-color: rgba(180,155,100,0.2) !important;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+      color: #1a1a2e !important;
+    }
+    .card * { color: #2d2d4e !important; }
+    .card:hover {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1) !important;
+      border-color: rgba(180,155,100,0.45) !important;
+    }
+    .card .text-gold, .card .overline, .card .section-label__name { color: #b49b64 !important; }
+
+    /* ─── ボタン ─── */
+    .btn--gold { background: #b49b64 !important; color: #ffffff !important; border-color: #b49b64 !important; font-weight: 600 !important; }
+    .btn--gold:hover { background: #c8aa72 !important; border-color: #c8aa72 !important; }
+    .btn--outline { color: #b49b64 !important; border-color: #b49b64 !important; font-weight: 500 !important; }
+    .btn--outline:hover { background: rgba(180,155,100,0.08) !important; }
+    .btn--ghost { color: #2d2d4e !important; border-color: rgba(26,26,46,0.2) !important; }
+    .btn--ghost:hover { color: #b49b64 !important; border-color: #b49b64 !important; }
+    .btn { font-size: 0.9rem !important; letter-spacing: 0.1em !important; font-weight: 600 !important; }
+
+    /* ─── バッジ ─── */
+    .badge--gold { background: rgba(180,155,100,0.15) !important; color: #7a5a00 !important; border-color: rgba(180,155,100,0.35) !important; }
+    .badge--sold { background: rgba(160,60,60,0.1) !important; }
+
+    /* ─── セクションラベル ─── */
+    .section-label__num, .section-label__name { color: #b49b64 !important; }
+    .section-label__line { background: #b49b64 !important; }
+    .gold-divider { background: linear-gradient(90deg, transparent, #b49b64, transparent) !important; }
+
+    /* ─── フッター ─── */
+    footer, .footer, [class*="footer"] { background: #1a1a2e !important; }
+    footer *, .footer *, [class*="footer"] * { color: #bdb5a6 !important; }
+    .footer__link:hover, [class*="footer"] a:hover { color: #b49b64 !important; }
+    footer .nav__logo-main { color: #f8f6f1 !important; }
+    footer .overline, footer .section-label__name { color: #b49b64 !important; }
+
+    /* ─── テーブル ─── */
+    table { background: #ffffff !important; border-collapse: collapse; }
+    th { background: #1a1a2e !important; color: #f8f6f1 !important; padding: 0.75rem 1rem !important; font-size: 0.9rem !important; }
+    td { color: #1a1a2e !important; padding: 0.65rem 1rem !important; font-size: 0.95rem !important; border-bottom: 1px solid rgba(26,26,46,0.08) !important; }
+    tr:nth-child(even) td { background: #f5f3ef !important; }
+
+    /* ─── インプット・フォーム ─── */
+    input, select, textarea {
+      background: #ffffff !important;
+      color: #1a1a2e !important;
+      border-color: rgba(26,26,46,0.2) !important;
+      font-size: 1rem !important;
+    }
+    label { color: #2d2d4e !important; font-size: 0.9rem !important; font-weight: 500 !important; }
+
+    /* ─── スクロールバー ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f0ede6; }
+    ::-webkit-scrollbar-thumb { background: #b49b64; border-radius: 3px; }
+
+    /* ─── フォントサイズ強化 ─── */
+    .sim-option-label, .sim-option-sub, .sim-airdna-key { font-size: 1rem !important; color: #1a1a2e !important; }
+    .disc-card__city, .disc-card__tagline, .disc-card__type { color: #1a1a2e !important; font-size: 0.95rem !important; }
+    .why-now-bullet span { color: #2d2d4e !important; font-size: 1rem !important; }
+    .data-rpt__title { color: #1a1a2e !important; font-size: 1.1rem !important; font-weight: 600 !important; }
+
+    /* ─── ライトモードでも読みやすい各種要素 ─── */
+    [style*="color: var(--text-main)"], [style*="color:var(--text-main)"] { color: #1a1a2e !important; }
+    [style*="color: var(--text-sub)"], [style*="color:var(--text-sub)"] { color: #2d2d4e !important; }
+    [style*="color: var(--gold)"], [style*="color:var(--gold)"] { color: #b49b64 !important; }
+    [style*="background: var(--navy"], [style*="background-color: var(--navy"] { background-color: #f8f6f1 !important; }
   </style>
 </head>
 
@@ -2387,7 +2526,7 @@
                 </li>
               </ul>
               <div class="tier-yield">
-                <div class="tier-yield-label" data-i18n="top.yield-label">Est. STR Yield</div>
+                <div class="tier-yield-label" data-i18n="top.yield-label">Estimated Annual Return</div>
                 <div class="tier-yield-value">8 – 12%</div>
               </div>
               <button class="tier-cta-btn" data-i18n="top.tier-cta">
@@ -2412,7 +2551,7 @@
                 </li>
                 <li class="tier-perk">
                   <span class="tier-perk-dot"></span>
-                  <span data-i18n="top.bamboo-p2">STR + LTR hybrid strategy</span>
+                  <span data-i18n="top.bamboo-p2">Mixed Strategy (Short-term + Long-term Rental)</span>
                 </li>
                 <li class="tier-perk">
                   <span class="tier-perk-dot"></span>
@@ -2424,7 +2563,7 @@
                 </li>
               </ul>
               <div class="tier-yield">
-                <div class="tier-yield-label" data-i18n="top.yield-label">Est. STR Yield</div>
+                <div class="tier-yield-label" data-i18n="top.yield-label">Estimated Annual Return</div>
                 <div class="tier-yield-value">10 – 15%</div>
               </div>
               <button class="tier-cta-btn" data-i18n="top.tier-cta">
@@ -2448,7 +2587,7 @@
                 </li>
                 <li class="tier-perk">
                   <span class="tier-perk-dot"></span>
-                  <span data-i18n="top.plum-p2">AirDNA-verified high-demand zones</span>
+                  <span data-i18n="top.plum-p2">AirDNA Market Data-verified high-demand zones</span>
                 </li>
                 <li class="tier-perk">
                   <span class="tier-perk-dot"></span>
@@ -2460,7 +2599,7 @@
                 </li>
               </ul>
               <div class="tier-yield">
-                <div class="tier-yield-label" data-i18n="top.yield-label">Est. STR Yield</div>
+                <div class="tier-yield-label" data-i18n="top.yield-label">Estimated Annual Return</div>
                 <div class="tier-yield-value">12 – 18%</div>
               </div>
               <button class="tier-cta-btn" data-i18n="top.tier-cta">
@@ -2474,7 +2613,7 @@
           <p class="tier-note reveal reveal-delay-4">
             <span>✦</span>
             <span data-i18n="top.tier-note">
-              Yield estimates based on AirDNA 2024 Osaka / Kyoto data.
+              Yield estimates based on AirDNA Market Data 2024 Osaka / Kyoto data.
               Individual results may vary. No personal information required.
             </span>
             <span>✦</span>
@@ -2485,7 +2624,7 @@
 
     </section><!-- /#top -->
     <!-- ══════════════════════════════════════════
-         §2  PLAY — 4-Tap ROI Simulator
+         §2  PLAY — 4-Tap Annual Profit Rate (ROI) Simulator
     ══════════════════════════════════════════ -->
     <section id="play" class="section">
       <div class="container">
@@ -2494,7 +2633,7 @@
         <div class="section-label reveal">
           <span class="section-label__num">02</span>
           <span class="section-label__line"></span>
-          <span class="section-label__name" data-i18n="play.label">Play — ROI Simulator</span>
+          <span class="section-label__name" data-i18n="play.label">Play — Annual Profit Rate (ROI) Simulator</span>
         </div>
 
         <!-- Heading -->
@@ -2505,7 +2644,7 @@
           <div class="gold-divider" style="margin-top:1.2rem;"></div>
           <p class="body-text reveal reveal-delay-1" data-i18n="play.subtitle">
             Select budget · area · rental strategy. Your Hajimekensetsu property ROI appears instantly.
-            No email. No commitment. Based on actual Hajimekensetsu listings × AirDNA 2024 data.
+            No email. No commitment. Based on actual Hajimekensetsu listings × AirDNA Market Data 2024 data.
           </p>
         </div>
 
@@ -2575,22 +2714,22 @@
               <button class="sim-option" data-step="2" data-val="osaka">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><rect x="1" y="13" width="5" height="8"/><rect x="7" y="9" width="5" height="12"/><rect x="13" y="11" width="5" height="10"/><rect x="19" y="6" width="4" height="15"/><line x1="0" y1="21" x2="24" y2="21"/></svg></span>
                 <span class="sim-option-label" data-i18n="play.osaka">Osaka</span>
-                <span class="sim-option-sub">Occ 78% · ADR ¥18,500</span>
+                <span class="sim-option-sub">Occupancy Rate 78% · Daily Rate (ADR) ¥18,500</span>
               </button>
               <button class="sim-option" data-step="2" data-val="kyoto">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><line x1="5" y1="21" x2="5" y2="8"/><line x1="19" y1="21" x2="19" y2="8"/><path d="M2 8h20"/><path d="M4 5h16" stroke-width="2"/><line x1="5" y1="13" x2="19" y2="13"/></svg></span>
                 <span class="sim-option-label" data-i18n="play.kyoto">Kyoto</span>
-                <span class="sim-option-sub">Occ 72% · ADR ¥24,000</span>
+                <span class="sim-option-sub">Occupancy Rate 72% · Daily Rate (ADR) ¥24,000</span>
               </button>
               <button class="sim-option" data-step="2" data-val="kobe">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M2 12c1.5-3 3.5-4.5 6-4.5S12.5 9 14 10.5s3 3 6 3"/><path d="M2 17c1.5-3 3.5-4.5 6-4.5S12.5 15 14 16.5s3 3 6 3"/></svg></span>
                 <span class="sim-option-label" data-i18n="play.kobe">Kobe</span>
-                <span class="sim-option-sub">Occ 68% · ADR ¥16,000</span>
+                <span class="sim-option-sub">Occupancy Rate 68% · Daily Rate (ADR) ¥16,000</span>
               </button>
               <button class="sim-option" data-step="2" data-val="nara">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M2 22C5 18 9 9 18 4c2-1 4-1 4 1s-1 7-5 10-9 5-12 3"/><path d="M2 22l7-9"/></svg></span>
                 <span class="sim-option-label" data-i18n="play.nara">Nara</span>
-                <span class="sim-option-sub">Occ 62% · ADR ¥14,000</span>
+                <span class="sim-option-sub">Occupancy Rate 62% · Daily Rate (ADR) ¥14,000</span>
               </button>
             </div>
           </div>
@@ -2604,18 +2743,18 @@
             <div class="sim-options">
               <button class="sim-option" data-step="3" data-val="str">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M21 16v-2l-8-5V3a1 1 0 00-2 0v6l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></span>
-                <span class="sim-option-label" data-i18n="play.str">Airbnb STR</span>
+                <span class="sim-option-label" data-i18n="play.str">Short-term Rental (Airbnb)</span>
                 <span class="sim-option-sub" data-i18n="play.str-sub">Max yield</span>
               </button>
               <button class="sim-option" data-step="3" data-val="ltr">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></span>
-                <span class="sim-option-label" data-i18n="play.ltr">Monthly LTR</span>
+                <span class="sim-option-label" data-i18n="play.ltr">Monthly Long-term Rental</span>
                 <span class="sim-option-sub" data-i18n="play.ltr-sub">Stable income</span>
               </button>
               <button class="sim-option" data-step="3" data-val="hybrid">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7l7-4 7 4"/><path d="M3 15l4-8 4 8"/><path d="M3 15h8"/><path d="M13 15l4-8 4 8"/><path d="M13 15h8"/><line x1="9" y1="21" x2="15" y2="21"/></svg></span>
                 <span class="sim-option-label" data-i18n="play.hybrid">Hybrid</span>
-                <span class="sim-option-sub" data-i18n="play.hybrid-sub">STR + LTR mix</span>
+                <span class="sim-option-sub" data-i18n="play.hybrid-sub">Short-term + Long-term Mix</span>
               </button>
               <button class="sim-option" data-step="3" data-val="holiday">
                 <span class="sim-option-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(0 12 12)"/><ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(72 12 12)"/><ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(144 12 12)"/><ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(216 12 12)"/><ellipse cx="12" cy="6" rx="2" ry="3.5" transform="rotate(288 12 12)"/></svg></span>
@@ -2667,10 +2806,10 @@
             </div>
           </div>
 
-          <!-- AirDNA Data -->
+          <!-- AirDNA Market Data Data -->
           <div class="sim-airdna">
             <div class="sim-airdna-header">
-              <span class="sim-airdna-badge">AirDNA 2024</span>
+              <span class="sim-airdna-badge">AirDNA Market Data 2024</span>
               <span class="sim-airdna-title" id="sim-airdna-title" data-i18n="play.airdna-title">
                 Market Data — Osaka
               </span>
@@ -2682,7 +2821,7 @@
               </div>
               <div class="sim-airdna-item">
                 <span class="sim-airdna-val" id="a-adr">—</span>
-                <span class="sim-airdna-key" data-i18n="play.adr">ADR / night</span>
+                <span class="sim-airdna-key" data-i18n="play.adr">Daily Room Rate (ADR) / night</span>
               </div>
               <div class="sim-airdna-item">
                 <span class="sim-airdna-val" id="a-revpar">—</span>
@@ -2741,7 +2880,7 @@
         <p class="tier-note reveal" style="margin-top:2rem;">
           <span>✦</span>
           <span data-i18n="play.disclaimer">
-            Projections are illustrative. Based on AirDNA Q4 2024 Osaka/Kyoto/Kobe data.
+            Projections are illustrative. Based on AirDNA Market Data Q4 2024 Osaka/Kyoto/Kobe data.
             Actual results vary by property, season, and management. Consult our team for a property-specific analysis.
           </span>
           <span>✦</span>
@@ -2790,12 +2929,12 @@
             <div class="disc-card__top" data-kanji="泉州・KIX">
               <span class="disc-card__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M21 16v-2l-8-5V3a1 1 0 00-2 0v6l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></span>
               <div>
-                <span class="disc-card__city">Osaka · Special STR Zone</span>
+                <span class="disc-card__city">Osaka · Special Short-term Rental Zone</span>
                 <span class="disc-card__name">Senshu · KIX Area</span>
               </div>
             </div>
             <div class="disc-card__body">
-              <p class="disc-card__tagline">"365-day STR legal · KIX 8 min direct"</p>
+              <p class="disc-card__tagline">"365-day Short-term Rental (Airbnb) legal · KIX 8 min direct"</p>
               <div class="disc-card__metrics">
                 <div>
                   <div class="disc-card__yield">10–15%</div>
@@ -2808,7 +2947,7 @@
                 </div>
               </div>
               <div class="disc-card__footer">
-                <span class="disc-card__type">STR Special Zone</span>
+                <span class="disc-card__type">Short-term Rental Special Zone</span>
                 <span class="disc-card__explore">View Properties →</span>
               </div>
             </div>
@@ -3125,7 +3264,7 @@
               </div>
               <div class="live-feature">
                 <div class="live-feature-dot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
-                <div class="live-feature-text"><strong>Live ROI Review</strong> — Share your simulator results and we'll verify them against actual Hajimekensetsu listing prices and AirDNA data.</div>
+                <div class="live-feature-text"><strong>Live ROI Review</strong> — Share your simulator results and we'll verify them against actual Hajimekensetsu listing prices and AirDNA Market Data data.</div>
               </div>
               <div class="live-feature">
                 <div class="live-feature-dot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
@@ -3365,11 +3504,11 @@
               <div class="why-now-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true" style="width:.9rem;height:.9rem;display:inline;vertical-align:middle;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Why Act Now</div>
               <h3 class="why-now-title">The Yen Window<br><em>Is Still Open</em></h3>
               <p class="why-now-copy">USD/JPY at 150+ means Japanese properties are 27% cheaper in USD than they were in 2019. Bank of Japan rates remain historically low. Osaka inbound tourism hit a record 36.87M visitors in 2024. Every month you wait, prices adjust.</p>
-              <span class="why-now-src">USDJPY long-term chart / BOJ Policy Rate Statement Dec 2024 / JNTO 2024</span>
+              <span class="why-now-src">USDJPY long-term chart / BOJ Policy Rate Statement Dec 2024 / Japan Tourism Agency (Japan Tourism Agency (JNTO)) 2024</span>
               <div class="why-now-bullets">
-                <div class="why-now-bullet"><span class="why-now-bullet-dot"></span><span>Osaka Expo 2025 sustained a 14% QoQ jump in STR occupancy</span></div>
+                <div class="why-now-bullet"><span class="why-now-bullet-dot"></span><span>Osaka Expo 2025 sustained a 14% QoQ jump in Short-term Rental occupancy</span></div>
                 <div class="why-now-bullet"><span class="why-now-bullet-dot"></span><span>IR (Casino Resort) approval targets 2029 — Namba/Yumeshima premium expected</span></div>
-                <div class="why-now-bullet"><span class="why-now-bullet-dot"></span><span>New Airbnb Minpaku Act reform expanding STR allowable days in 2026</span></div>
+                <div class="why-now-bullet"><span class="why-now-bullet-dot"></span><span>New Airbnb Minpaku Act reform expanding Short-term Rental allowable days in 2026</span></div>
               </div>
             </div>
             <div class="why-now-right">
@@ -3406,7 +3545,7 @@
             <div class="dsc">
               <span class="dsc__num">3,687万人</span>
               <div class="dsc__desc">訪日外客数 2024年 — 過去最高水準を更新</div>
-              <span class="dsc__src">JNTO 訪日外客統計 2024年12月</span>
+              <span class="dsc__src">Japan Tourism Agency (Japan Tourism Agency (JNTO)) 訪日外客統計 2024年12月</span>
             </div>
             <div class="dsc">
               <span class="dsc__num">¥8.1兆円</span>
@@ -3415,20 +3554,20 @@
             </div>
             <div class="dsc">
               <span class="dsc__num">74%</span>
-              <div class="dsc__desc">関西圏 STR平均稼働率 — 東南アジア主要都市を上回る</div>
-              <span class="dsc__src">AirDNA Kansai Market Report Q4 2024</span>
+              <div class="dsc__desc">関西圏 Short-term Rental (Airbnb) 平均稼働率 — 東南アジア主要都市を上回る</div>
+              <span class="dsc__src">AirDNA Market Data Kansai Market Report Q4 2024</span>
             </div>
           </div>
           <div class="data-stats-grid">
             <div class="dsc">
               <span class="dsc__num">¥20,500</span>
-              <div class="dsc__desc">大阪難波 STR平均宿泊単価（ADR）</div>
-              <span class="dsc__src">AirDNA Osaka Namba Q4 2024</span>
+              <div class="dsc__desc">大阪難波 Short-term Rental 平均宿泊単価（ADR）</div>
+              <span class="dsc__src">AirDNA Market Data Osaka Namba Q4 2024</span>
             </div>
             <div class="dsc">
               <span class="dsc__num">+23%</span>
-              <div class="dsc__desc">大阪 STR物件数 前年比増加率 — 供給より需要増加が先行</div>
-              <span class="dsc__src">AirDNA Supply &amp; Demand Report 2024</span>
+              <div class="dsc__desc">大阪 Short-term Rental 物件数 前年比増加率 — 供給より需要増加が先行</div>
+              <span class="dsc__src">AirDNA Market Data Supply &amp; Demand Report 2024</span>
             </div>
             <div class="dsc">
               <span class="dsc__num">155円台</span>
@@ -3751,7 +3890,7 @@
         'top.tier-title':  'Choose Your Path',
         'top.tier-sub':    'Tap one card · Your simulator will be ready instantly',
         'top.featured-tag':'Most Popular',
-        'top.yield-label': 'Est. STR Yield',
+        'top.yield-label': 'Estimated Annual Return',
         'top.tier-cta':    'Select This Path →',
         'top.pine-name':   'Japan Lover',
         'top.pine-tagline':'"Fall deeper into Japan"',
@@ -3762,20 +3901,20 @@
         'top.bamboo-name': 'Both',
         'top.bamboo-tagline':'"Live it. Earn from it."',
         'top.bamboo-p1':   'Lifestyle property with strong ROI',
-        'top.bamboo-p2':   'STR + LTR hybrid strategy',
+        'top.bamboo-p2':   'Mixed Strategy (Short-term + Long-term Rental)',
         'top.bamboo-p3':   'Best-of-both-worlds balance',
         'top.bamboo-p4':   'Osaka · Kyoto · Kobe prime zones',
         'top.plum-name':   'Pure Investor',
         'top.plum-tagline':'"Numbers tell the story"',
         'top.plum-p1':     'Maximum yield · Hands-off management',
-        'top.plum-p2':     'AirDNA-verified high-demand zones',
+        'top.plum-p2':     'AirDNA Market Data-verified high-demand zones',
         'top.plum-p3':     'Full property management service',
         'top.plum-p4':     'Osaka Namba · Shinsaibashi · Dotonbori',
-        'top.tier-note':   'Yield estimates based on AirDNA 2024 Osaka/Kyoto data. Individual results may vary. No personal information required.',
+        'top.tier-note':   'Yield estimates based on AirDNA Market Data 2024 Osaka/Kyoto data. Individual results may vary. No personal information required.',
         /* §2 PLAY */
-        'play.label':       'Play — ROI Simulator',
+        'play.label':       'Play — Annual Profit Rate (ROI) Simulator',
         'play.title':       '4 Taps to Your Future Return',
-        'play.subtitle':    'Select budget → area → strategy. Your personalised ROI appears instantly. No email. No commitment. Powered by AirDNA 2024 market data.',
+        'play.subtitle':    'Select budget → area → strategy. Your personalised ROI appears instantly. No email. No commitment. Powered by AirDNA Market Data 2024 market data.',
         'play.step1-label': 'Budget',
         'play.step2-label': 'Area',
         'play.step3-label': 'Strategy',
@@ -3791,12 +3930,12 @@
         'play.kyoto':   'Kyoto',
         'play.kobe':    'Kobe',
         'play.nara':    'Nara',
-        'play.str':     'Airbnb STR',
+        'play.str':     'Short-term Rental (Airbnb)',
         'play.str-sub': 'Max yield',
-        'play.ltr':     'Monthly LTR',
+        'play.ltr':     'Monthly Long-term Rental',
         'play.ltr-sub': 'Stable income',
-        'play.hybrid':  'Hybrid',
-        'play.hybrid-sub':'STR + LTR mix',
+        'play.hybrid':  'Mixed Strategy',
+        'play.hybrid-sub':'Short-term + Long-term Mix',
         'play.holiday': 'Holiday Home',
         'play.holiday-sub':'Live + earn',
         'play.results-title':'✦ Your ROI Projection',
@@ -3810,7 +3949,7 @@
         'play.years':        'years',
         'play.airdna-title': 'Market Data',
         'play.occupancy':    'Occupancy',
-        'play.adr':          'ADR / night',
+        'play.adr':          'Daily Room Rate (ADR) / night',
         'play.revpar':       'RevPAR',
         'play.nights':       'Booked Nights/yr',
         'play.breakdown':    'Income Breakdown',
@@ -3820,17 +3959,17 @@
         'play.cta-tour':     'Book a Live Tour →',
         'play.cta-props':    'Browse Properties ↗',
         'play.reset':        '↺ Reset',
-        'play.disclaimer':   'Projections are illustrative. Based on AirDNA Q4 2024 data. Actual results vary by property, season, and management.',
+        'play.disclaimer':   'Projections are illustrative. Based on AirDNA Market Data Q4 2024 data. Actual results vary by property, season, and management.',
         /* §3 DISCOVER */
         'disc.label':'Discover — 6 Areas','disc.title':'Find Your Perfect Address',
-        'disc.subtitle':'Six curated investment zones across Osaka, Kyoto, Kobe and Nara. Tap any area to explore AirDNA yields, neighbourhood character, and available property types.',
+        'disc.subtitle':'Six curated investment zones across Osaka, Kyoto, Kobe and Nara. Tap any area to explore AirDNA Market Data yields, neighbourhood character, and available property types.',
         'disc.filter-all':'All Areas','disc.filter-yield':'High Yield','disc.filter-life':'Lifestyle','disc.filter-new':'Emerging',
         'disc.yield':'Yield','disc.occ':'Occ.',
-        'disc.namba-tag':'"King of Japan STR"','disc.gion-tag':'"Premium ADR, heritage soul"',
+        'disc.namba-tag':'"King of Japan Short-term Rental"','disc.gion-tag':'"Premium Daily Rate (ADR), heritage soul"',
         'disc.kitano-tag':'"East meets West, always"','disc.nara-tag':'"Ancient capital, modern yield"',
-        'disc.shin-tag':'"Shopping, style, STR gold"','disc.skai-tag':'"Emerging. Retro. Undervalued."',
-        'disc.str-king':'STR King','disc.premium':'Premium','disc.intl':'International',
-        'disc.value':'Niche Value','disc.luxury-str':'Luxury STR','disc.emerging-tag':'Emerging',
+        'disc.shin-tag':'"Shopping, style, Short-term Rental gold"','disc.skai-tag':'"Emerging. Retro. Undervalued."',
+        'disc.str-king':'Short-term Rental King','disc.premium':'Premium','disc.intl':'International',
+        'disc.value':'Niche Value','disc.luxury-str':'Luxury Short-term Rental','disc.emerging-tag':'Emerging',
         'disc.explore':'Explore →',
         /* NAV */
         'nav.top':       'Top',
@@ -3998,16 +4137,16 @@
         'top.bamboo-name': 'Cả Hai',
         'top.bamboo-tagline':'"Sống trải nghiệm. Kiếm từ đó."',
         'top.bamboo-p1':   'Bất động sản lối sống với ROI mạnh',
-        'top.bamboo-p2':   'Chiến lược kết hợp STR + LTR',
+        'top.bamboo-p2':   'Chiến lược kết hợp Short-term + Long-term Rental',
         'top.bamboo-p3':   'Cân bằng hoàn hảo giữa sống và đầu tư',
         'top.bamboo-p4':   'Khu vực hàng đầu Osaka · Kyoto · Kobe',
         'top.plum-name':   'Nhà Đầu Tư Thuần Túy',
         'top.plum-tagline':'"Những con số nói lên tất cả"',
         'top.plum-p1':     'Lợi suất tối đa · Quản lý toàn diện',
-        'top.plum-p2':     'Khu vực nhu cầu cao được AirDNA xác minh',
+        'top.plum-p2':     'Khu vực nhu cầu cao được AirDNA Market Data xác minh',
         'top.plum-p3':     'Dịch vụ quản lý bất động sản đầy đủ',
         'top.plum-p4':     'Namba Osaka · Shinsaibashi · Dotonbori',
-        'top.tier-note':   'Ước tính lợi suất dựa trên dữ liệu AirDNA 2024 tại Osaka/Kyoto. Kết quả thực tế có thể khác nhau. Không yêu cầu thông tin cá nhân.',
+        'top.tier-note':   'Ước tính lợi suất dựa trên dữ liệu AirDNA Market Data 2024 tại Osaka/Kyoto. Kết quả thực tế có thể khác nhau. Không yêu cầu thông tin cá nhân.',
         /* §2 PLAY */
         'play.label':'Mô phỏng ROI','play.title':'4 Lần Nhấn Cho Lợi Nhuận Tương Lai','play.subtitle':'Chọn ngân sách → khu vực → chiến lược. ROI cá nhân hoá hiển thị ngay. Không cần email.',
         'play.step1-label':'Ngân sách','play.step2-label':'Khu vực','play.step3-label':'Chiến lược','play.step4-label':'Kết quả',
@@ -4015,7 +4154,7 @@
         'play.entry':'Cơ bản','play.standard':'Tiêu chuẩn','play.premium':'Cao cấp','play.luxury':'Hạng sang',
         'play.osaka':'Osaka','play.kyoto':'Kyoto','play.kobe':'Kobe','play.nara':'Nara',
         'play.str':'Airbnb Ngắn hạn','play.str-sub':'Lợi suất tối đa','play.ltr':'Thuê Dài hạn','play.ltr-sub':'Thu nhập ổn định',
-        'play.hybrid':'Hỗn hợp','play.hybrid-sub':'STR + LTR','play.holiday':'Nhà Nghỉ Dưỡng','play.holiday-sub':'Ở + Thu nhập',
+        'play.hybrid':'Hỗn hợp','play.hybrid-sub':'Short-term + Long-term Rental','play.holiday':'Nhà Nghỉ Dưỡng','play.holiday-sub':'Ở + Thu nhập',
         'play.results-title':'✦ Dự Báo ROI Của Bạn','play.annual-income':'Thu Nhập Hàng Năm','play.gross-yield':'Lợi Suất Gộp',
         'play.net-yield':'Lợi Suất Ròng','play.payback':'Thời Gian Hoàn Vốn','play.yen-gross':'JPY (gộp)',
         'play.per-year':'mỗi năm','play.after-mgmt':'sau phí quản lý','play.years':'năm',
@@ -4023,7 +4162,7 @@
         'play.revpar':'RevPAR','play.nights':'Số đêm đặt/năm',
         'play.breakdown':'Phân Tích Thu Nhập','play.gross-income':'Thu nhập gộp','play.mgmt-cost':'Phí quản lý','play.net-income':'Thu nhập ròng',
         'play.cta-tour':'Đặt Lịch Tour →','play.cta-props':'Xem Bất Động Sản ↗','play.reset':'↺ Đặt lại',
-        'play.disclaimer':'Dự báo mang tính minh họa. Dựa trên dữ liệu AirDNA Q4 2024. Kết quả thực tế có thể khác nhau.',
+        'play.disclaimer':'Dự báo mang tính minh họa. Dựa trên dữ liệu AirDNA Market Data Q4 2024. Kết quả thực tế có thể khác nhau.',
         /* NAV */
         'nav.top':       'Trang chủ',
         'nav.play':      'Mô phỏng',
@@ -4282,10 +4421,10 @@
         kix: {
           kanji:'泉州・KIXエリア', romaji:'Senshu · KIX Area · Osaka', city:'Osaka South',
           flag:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b49b64" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="svg-icon" aria-hidden="true"><path d="M21 16v-2l-8-5V3a1 1 0 00-2 0v6l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>',
-          tagline:'"365-day STR fully legal · KIX 8 min direct"',
-          desc:'Japan\'s only nationally designated STR Special Zone — Airbnb is 100% legal 365 days a year, no quota. Kansai International Airport (KIX) is 8 minutes away by train, delivering year-round demand from travelers across Asia. Hajimekensetsu new-build 3LDK homes from ¥22M here generate the highest gross STR yield in the Osaka metro area.',
+          tagline:'"365-day Short-term Rental (Airbnb) fully legal · KIX 8 min direct"',
+          desc:'Japan\'s only nationally designated Short-term Rental Special Zone — Airbnb is 100% legal 365 days a year, no quota. Kansai International Airport (KIX) is 8 minutes away by train, delivering year-round demand from travelers across Asia. Hajimekensetsu new-build 3LDK homes from ¥22M here generate the highest gross STR yield in the Osaka metro area.',
           yield:'10–15%', occ:'74%', adr:'¥18,500', revpar:'¥13,690', ltr:'¥80,000/mo', mgmt:'18%',
-          type:'STR Special Zone',
+          type:'Short-term Rental Special Zone',
           props:['3LDK  ¥22M–28M (Hajimekensetsu)','4LDK  ¥26M–34M (Hajimekensetsu)'],
           hls:['365-day STR · no restrictions','KIX Airport 8 min by train','Highest yield in Osaka South','Supply: Izumisano · Kaizuka · Kishiwada'],
         },
@@ -4337,7 +4476,7 @@
           yield:'9–15%', occ:'72%', adr:'¥18,000', revpar:'¥12,960', ltr:'¥80,000/mo', mgmt:'18%',
           type:'Resort × Military',
           props:['3LDK  ¥22M–30M (Hajimekensetsu)','4LDK  ¥26M–35M (Hajimekensetsu)'],
-          hls:['Taiwan 90 min · Hong Kong 2 hrs','US Military LTR · year-round','Beach resort STR premium ADR','Supply: Okinawa City · Uruma · Yomitan'],
+          hls:['Taiwan 90 min · Hong Kong 2 hrs','US Military Long-term Rental · year-round','Beach resort Short-term Rental premium daily rate','Supply: Okinawa City · Uruma · Yomitan'],
         },
       };
 
@@ -4361,7 +4500,7 @@
           <div class="disc-detail__metrics-grid">
             <div class="disc-detail__metric"><span class="disc-detail__mval">${a.yield}</span><span class="disc-detail__mkey">Est. Yield</span></div>
             <div class="disc-detail__metric"><span class="disc-detail__mval">${a.occ}</span><span class="disc-detail__mkey">Occupancy</span></div>
-            <div class="disc-detail__metric"><span class="disc-detail__mval">${a.adr}</span><span class="disc-detail__mkey">ADR / night</span></div>
+            <div class="disc-detail__metric"><span class="disc-detail__mval">${a.adr}</span><span class="disc-detail__mkey">Daily Room Rate (ADR) / night</span></div>
             <div class="disc-detail__metric"><span class="disc-detail__mval">${a.revpar}</span><span class="disc-detail__mkey">RevPAR</span></div>
             <div class="disc-detail__metric"><span class="disc-detail__mval">${a.ltr}</span><span class="disc-detail__mkey">LTR Monthly</span></div>
             <div class="disc-detail__metric"><span class="disc-detail__mval">${a.mgmt}</span><span class="disc-detail__mkey">Mgmt Fee</span></div>
@@ -4422,7 +4561,7 @@
     })(); /* end DiscoverModule */
 
     /* ════════════════════════════════════════
-       §2  PLAY — ROI Simulator Logic
+       §2  PLAY — Annual Profit Rate (ROI) Simulator Logic
     ════════════════════════════════════════ */
     (function SimulatorModule() {
 
@@ -4441,9 +4580,9 @@
           nara:  { name: 'Nara',   occ: 0.62, adr: 14000, ltr: 60000,  mgmt: 0.15 },
         },
         strategy: {
-          str:     { name: 'Airbnb STR',   strPct: 1.00, ltrPct: 0.00 },
-          ltr:     { name: 'Monthly LTR',  strPct: 0.00, ltrPct: 1.00 },
-          hybrid:  { name: 'Hybrid',       strPct: 0.65, ltrPct: 0.35 },
+          str:     { name: 'Short-term Rental (Airbnb)',   strPct: 1.00, ltrPct: 0.00 },
+          ltr:     { name: 'Monthly Long-term Rental',  strPct: 0.00, ltrPct: 1.00 },
+          hybrid:  { name: 'Mixed Strategy',       strPct: 0.65, ltrPct: 0.35 },
           holiday: { name: 'Holiday Home', strPct: 0.40, ltrPct: 0.00 },
         }
       };
@@ -4515,7 +4654,7 @@
 
         /* Subtitle */
         document.getElementById('sim-results-subtitle').textContent =
-          `Property ≈ ${fmtY(r.price)} · Based on AirDNA ${r.area.name} 2024`;
+          `Property ≈ ${fmtY(r.price)} · Based on AirDNA Market Data ${r.area.name} 2024`;
 
         /* Metrics */
         countUp(document.getElementById('m-annual'),  fmtY(r.gross));
@@ -4523,7 +4662,7 @@
         countUp(document.getElementById('m-net'),     fmtP(r.netYld));
         countUp(document.getElementById('m-payback'), fmtN(r.payback) + ' yrs');
 
-        /* AirDNA data */
+        /* AirDNA Market Data data */
         document.getElementById('sim-airdna-title').textContent =
           `Market Data — ${r.area.name}`;
         document.getElementById('a-occ').textContent    = Math.round(r.area.occ * 100) + '%';
